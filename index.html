@@ -6,7 +6,7 @@
     <title>Stenvek</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=block" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -28,10 +28,21 @@
             font-size: clamp(4rem, 15vw, 12rem);
             font-weight: 400;
             letter-spacing: 0.15em;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        .fonts-loaded h1 {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <h1>STENVEK</h1>
+    <script>
+        document.fonts.ready.then(function() {
+            document.body.classList.add('fonts-loaded');
+        });
+    </script>
 </body>
 </html>
